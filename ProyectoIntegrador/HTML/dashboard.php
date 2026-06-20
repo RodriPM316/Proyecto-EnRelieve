@@ -104,7 +104,7 @@ $con = conectar();
                         while($fila = $datos->fetch_assoc()){
                             ?>
                             <tr>
-                                <th scope="row"> <?php echo $fila['ID_Usuario'] ?> </th>
+                                <th scope="row"> <?php echo $fila['id'] ?> </th>                                
                                 <td> <?php echo $fila['Nombre']. " " .$fila['aPaterno']. " " .$fila['aMaterno'] ?> </td>
                                 <td> <?php echo $fila['Usuario'] ?> </td>
                                 <td> <?php echo $fila['Correo'] ?> </td>
@@ -146,7 +146,7 @@ $con = conectar();
                                         <p>Eliminar</p>
                                     <?php else: ?>
                                         <a class="table-link" 
-                                        href="../php/eliminarU.php?user=<?php echo $fila['Usuario'];?>&nivel=<?php echo $fila['Nivel'];?>">Eliminar</a>
+                                        href="../php/eliminarU.php?user=<?php echo $fila['Usuario'];?>&nivel=<?php echo $fila['nivel'];?>">Eliminar</a>
                                     <?php endif; ?>
                                 </td>
                             </tr>

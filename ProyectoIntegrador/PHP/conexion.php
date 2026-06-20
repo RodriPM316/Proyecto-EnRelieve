@@ -3,10 +3,15 @@ function conectar(){
     try{
         $tipo="localhost";
         $user="root";
-        $password="123456789";
+        $password="Permon17$";
         $db="pintegrador";
+        $puerto=3305;
 
-        $conectar=new mysqli($tipo, $user, $password, $db);
+        $conectar=new mysqli($tipo, $user, $password, $db, $puerto);
+        
+        if ($conectar->connect_error) {
+            die("Error crítico de conexión: " . $conectar->connect_error);
+        }
         
         return $conectar;
     }catch(Exception $e){
