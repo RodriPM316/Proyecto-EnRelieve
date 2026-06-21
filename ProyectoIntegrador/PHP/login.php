@@ -32,6 +32,9 @@ function login($con, $User, $Password){
             $_SESSION['materno'] = $usuario['aMaterno'];
             $_SESSION['email'] = $usuario['Correo'];
             $_SESSION['nivel'] = $usuario['nivel'];
+            
+            // NUEVO: Guardar el progreso de la lección
+            $_SESSION['nivel_leccion'] = $usuario['nivel_leccion']; 
 
             // Redirección
             header("Location: ../html/index.php");

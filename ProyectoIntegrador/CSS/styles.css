@@ -256,3 +256,22 @@ main {
 .background_footer hr {
     border-color: rgba(255, 255, 255, 0.1);
 }
+
+/* Tarjetas de Nivel */
+.nivel-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.nivel-card:not(.opaco):hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border: 1px solid var(--primary-color) !important;
+}
+
+.nivel-card.opaco {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+    pointer-events: none; /* Evita que le den clic si está bloqueado */
+}

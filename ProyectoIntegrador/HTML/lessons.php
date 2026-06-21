@@ -90,34 +90,67 @@
 
     <main class="container my-5 p-4 p-md-5 bg-white rounded shadow-sm main-enhanced">
         <header class="text-center mb-5">
-            <h1 class="text-primary fw-bold display-6">Lecciones sobre Braille</h1>
-            <p class="text-muted fs-5">Aprende los fundamentos y la lógica detrás de este sistema de lectoescritura.</p>
+            <h1 class="text-primary fw-bold display-6">Academia EnRelieve</h1>
+            <p class="text-muted fs-5">Completa las lecciones y cuestionarios para desbloquear nuevos conocimientos.</p>
         </header>
 
-        <section class="lesson-section">
-            <h2 class="mb-4 text-dark fw-semibold border-bottom border-light pb-3">Funcionamiento del alfabeto Braille</h2>
-            <div class="ratio ratio-16x9 rounded shadow-sm mx-auto overflow-hidden" style="max-width: 800px;">
-                <video controls>
-                    <source src="../video/Alfabeto_Braille.mp4" type="video/mp4">
-                    Tu navegador no soporta el elemento de video.
-                </video>
-            </div>
-            <p class="mt-4 justificado fs-5 text-muted mx-auto" style="max-width: 800px;">
-                Este video explica cómo funciona el lenguaje Braille para representar el alfabeto, facilitando la lectura táctil para personas con discapacidad visual.
-            </p>
+        <!-- MAPA DE NIVELES -->
+        <section id="mapaNiveles" class="row g-4 justify-content-center">
+            
+            <!-- Nivel 1 (Desbloqueado por defecto) -->
+            <article class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm lesson-section text-center p-4 nivel-card" id="card-nivel-1" onclick="abrirNivel(1)">
+                    <div class="mb-3">
+                        <span class="display-4">🔤</span>
+                    </div>
+                    <h3 class="h5 fw-bold text-primary">Nivel 1: Alfabeto (Grado 1)</h3>
+                    <p class="text-muted mb-3 justificado">Conoce la historia del Braille y cómo se forman las letras básicas.</p>
+                    <span class="badge bg-success rounded-pill px-3 py-2">Desbloqueado</span>
+                </div>
+            </article>
+
+            <!-- Nivel 2 (Bloqueado) -->
+            <article class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm lesson-section text-center p-4 nivel-card opaco" id="card-nivel-2" onclick="abrirNivel(2)">
+                    <div class="mb-3">
+                        <span class="display-4">🔢</span>
+                    </div>
+                    <h3 class="h5 fw-bold text-secondary">Nivel 2: Numeración</h3>
+                    <p class="text-muted mb-3 justificado">Descubre el prefijo mágico que convierte las letras en números.</p>
+                    <span class="badge bg-secondary rounded-pill px-3 py-2" id="badge-nivel-2">🔒 Bloqueado</span>
+                </div>
+            </article>
+
+            <!-- Nivel 3 (Bloqueado) -->
+            <article class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm lesson-section text-center p-4 nivel-card opaco" id="card-nivel-3" onclick="abrirNivel(3)">
+                    <div class="mb-3">
+                        <span class="display-4">⚡</span>
+                    </div>
+                    <h3 class="h5 fw-bold text-secondary">Nivel 3: Grado 2 (Estenografía)</h3>
+                    <p class="text-muted mb-3 justificado">Aprende a leer más rápido usando contracciones de palabras.</p>
+                    <span class="badge bg-secondary rounded-pill px-3 py-2" id="badge-nivel-3">🔒 Bloqueado</span>
+                </div>
+            </article>
         </section>
 
-        <section class="lesson-section">
-            <h2 class="mb-4 text-dark fw-semibold border-bottom border-light pb-3">Representación numérica en Braille</h2>
-            <div class="ratio ratio-16x9 rounded shadow-sm mx-auto overflow-hidden" style="max-width: 800px;">
-                <video controls>
-                    <source src="../video/Numerico_Braille.mp4" type="video/mp4">
-                    Tu navegador no soporta el elemento de video.
-                </video>
+        <!-- CONTENEDOR DE LA LECCIÓN (Oculto por defecto) -->
+        <section id="contenedorLeccion" class="d-none">
+            <button class="btn btn-outline-secondary mb-4 rounded-pill" onclick="volverAlMapa()">⬅ Volver al Mapa</button>
+            
+            <div id="contenidoLeccion" class="bg-light p-4 rounded-3 shadow-sm border border-white">
+                <!-- El contenido se inyecta por JS -->
             </div>
-            <p class="mt-4 justificado fs-5 text-muted mx-auto" style="max-width: 800px;">
-                Este video muestra cómo se utiliza el sistema Braille para representar los números, siguiendo una codificación especial dentro del alfabeto táctil.
-            </p>
+
+            <!-- CUESTIONARIO -->
+            <div class="mt-5 p-4 bg-white rounded-3 shadow-sm border border-light">
+                <h4 class="fw-bold text-primary mb-4">📝 Demuestra lo que aprendiste</h4>
+                <div id="contenedorPregunta">
+                    <!-- Las preguntas se inyectan por JS -->
+                </div>
+                <div id="feedbackQuiz" class="mt-3 d-none alert"></div>
+                <button id="btnValidar" class="btn btn-primary mt-3 px-4 rounded-pill fw-bold" onclick="validarRespuesta()">Validar Respuesta</button>
+            </div>
         </section>
     </main>
 
@@ -279,8 +312,15 @@
         </div>
     </div>
 
+    <!--Scripts-->
     <script src="../js/componentes.js"></script>
     <script src="../js/validaciones.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    
+    <!-- PASAR VARIABLE PHP A JS -->
+    <script>
+        const nivelGuardadoUsuario = <?php echo isset($_SESSION['nivel_leccion']) ? $_SESSION['nivel_leccion'] : 1; ?>;
+    </script>
+    <script src="../js/lecciones.js"></script>
 </body>
 </html>
