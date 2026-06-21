@@ -80,15 +80,25 @@
     <div style="height: 100px;"></div>
 
     <main class="container my-5 p-4 p-md-5 bg-white rounded shadow-sm main-enhanced">
-        <header class="text-center mb-5">
+        <header class="text-center mb-4">
             <h1 class="fw-bold text-primary display-6">Traductor Inteligente</h1>
             <p class="text-muted fs-5">Escribe en español para generar instantáneamente su equivalente en sistema Braille.</p>
         </header>
 
+        <section class="d-flex justify-content-center mb-5">
+            <div class="bg-light p-1 rounded-pill shadow-sm d-inline-flex" role="group" aria-label="Selector de Grado">
+                <input type="radio" class="btn-check" name="gradoBraille" id="grado1" value="1" autocomplete="off" checked>
+                <label class="btn btn-outline-primary rounded-pill px-4 fw-semibold border-0" for="grado1">Grado 1 (Literal)</label>
+
+                <input type="radio" class="btn-check" name="gradoBraille" id="grado2" value="2" autocomplete="off">
+                <label class="btn btn-outline-primary rounded-pill px-4 fw-semibold border-0" for="grado2">Grado 2 (Estenográfico)</label>
+            </div>
+        </section>
+
         <section class="row g-4 justify-content-center mb-5">
             <article class="col-12 col-lg-6">
                 <div class="card border-0 shadow-sm p-3 bg-light rounded">
-                    <label voices for="textSpanish" class="form-label fw-bold text-dark fs-5 mb-2 d-flex align-items-center">
+                    <label for="textSpanish" class="form-label fw-bold text-dark fs-5 mb-2 d-flex align-items-center">
                         <span class="badge bg-primary me-2 rounded-circle">1</span> Texto en Español
                     </label>
                     <textarea class="form-control textarea-estilizado" id="textSpanish" placeholder="Escribe o pega tu texto aquí..."></textarea>
@@ -106,11 +116,10 @@
         </section>
 
         <section class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
-            <button class="btn btn-primary btn-lg px-5 shadow-sm text-white py-2.5" type="submit"
-                onclick="Traducir(document.getElementById('textSpanish'), document.getElementById('textBraille'))">
+            <button class="btn btn-primary btn-lg px-5 shadow-sm text-white py-2.5" type="button" onclick="Traducir()">
                 Traducir Texto
             </button>
-            <button onclick="limpiarTextareas()" class="btn btn-outline-secondary btn-lg px-5 py-2.5">
+            <button class="btn btn-outline-secondary btn-lg px-5 py-2.5" type="button" onclick="limpiarTextareas()">
                 Limpiar todo
             </button>
         </section>
