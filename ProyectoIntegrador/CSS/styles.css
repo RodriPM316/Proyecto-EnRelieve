@@ -1,147 +1,258 @@
-/* Fondo del body */
+/* =========================================
+   VARIABLES GLOBALES (Paleta de colores)
+========================================= */
+:root {
+    --bg-main: #f4f7f6;
+    --bg-navbar: #ffffff;
+    --bg-footer: #1a1d20;
+    --text-main: #2b2d42;
+    --text-muted: #8d99ae;
+    --primary-color: #0d6efd;
+    --primary-hover: #0a58ca;
+    --accent-color: #eef2f5;
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 12px 40px rgba(13, 110, 253, 0.15);
+    --radius-lg: 20px;
+    --radius-md: 12px;
+}
+
+/* =========================================
+   ESTILOS GENERALES
+========================================= */
 body {
-    background-color: #f8f9fa;
-}   
-
-/* CSS footer y header */
-.background_navbar{
-    background-color: #c4dafa;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.background_footer{
-    background-color: #eeeeee;
+main {
+    flex: 1; /* Permite que el footer siempre se quede al fondo si hay poco contenido */
 }
 
+/* Redondeo de esquinas mejorado */
+.rounded {
+    border-radius: var(--radius-md) !important;
+}
+
+/* Justificado de texto más natural */
+.justificado {
+    text-align: justify;      
+    text-justify: inter-word; 
+    line-height: 1.7;        
+    margin: 0 0 1rem 0;
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+
+/* =========================================
+   NAVBAR Y NAVEGACIÓN
+========================================= */
+.background_navbar {
+    background-color: rgba(255, 255, 255, 0.9) !important; /* Ligeramente transparente */
+    backdrop-filter: blur(10px); /* Efecto cristal / vidrio */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-soft);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 0.5rem 0;
+}
+
+/* Regla estricta: NO modificar el logo */
 .logo-navbar {
     width: 90px !important;
     height: auto !important;
     display: block !important;
+    transition: transform 0.3s ease;
 }
 
-.icon-login {
-    max-width: 35px !important;
-    max-height: 35px !important;
-    width: 35px !important;
-    height: auto !important;
-    object-fit: contain;
-    display: inline-block;
+.logo-navbar:hover {
+    transform: scale(1.05); /* Pequeño efecto de resorte al pasar el cursor */
 }
 
-.input-search{
-    background-color: #fffbef;
+/* Links del Navbar */
+.nav-link.nav-btn {
+    color: var(--text-main);
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link.nav-btn:hover {
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+}
+
+.nav-link.disable {
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+/* Buscador */
+.input-search {
+    background-color: var(--bg-main);
+    border: 1px solid transparent;
+    border-radius: 20px 0 0 20px;
+    padding-left: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.input-search:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: none;
 }
 
 .icon-search {
     max-width: 15px !important;
     max-height: 15px !important;
-    width: 15px !important;
-    height: auto !important;
-    object-fit: contain;
-    display: inline-block;
 }
 
-/* Justificado de texto */
-.justificado {
-    text-align: justify;      
-    text-justify: inter-word; 
-    hyphens: auto;          
-    line-height: 1.6;        
-    margin: 0 0 1rem 0;
-    font-size: 1rem;
-    text-align-last: left;
+.btn-light.border-start-0 {
+    border-radius: 0 20px 20px 0;
+    background-color: var(--bg-main);
+    border: 1px solid transparent;
 }
 
-/* Redondeo de esquinas */
-.rounded{
-    border-radius: 15px;
-}
-
-/* Boton con cambio de color*/
-.nav-link.nav-btn {
-    color: black;
-    text-decoration: none;
-}
-
-.nav-link.nav-btn:hover {
-    color: #fff6e0;
-}
-
-.nav-link.footer-btn {
-    color: black !important;
-}
-
-.nav-link.footer-btn:hover {
-    color: #788199 !important;
-}
-
-/* Linea mas ancha */
-.hr-grueso {
-    height: 4px;
-}
-
-/* Main */
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.45);
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-}
-
-/* CSS Tranductor */
+/* =========================================
+   INTERFAZ DEL TRADUCTOR (El Corazón)
+========================================= */
 .textarea-estilizado {
-    height: 270px;
+    height: 300px;
     background-color: #ffffff;
-    color: #212529;                   /* Texto elegante y legible */
+    color: var(--text-main);
     font-family: "Segoe UI", Roboto, sans-serif;
-    font-size: 2rem;
-    line-height: 1.5;
-
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-
-    padding: 12px 14px;
-    resize: none;                    /* Evita deformación si no la quieres */
-
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
-    transition: all 0.2s ease-in-out;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    border: 1px solid #e1e5eb;
+    border-radius: var(--radius-md);
+    padding: 20px;
+    resize: none;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+    transition: all 0.3s ease-in-out;
 }
 
 .textarea-estilizado:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
-    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15);
+    transform: translateY(-2px); /* Sensación de relieve */
 }
 
 .textarea-estilizado:disabled {
-    background-color: white !important;
-    color: #6c757d;
+    background-color: #f8f9fa !important;
+    color: var(--text-main);
     opacity: 1;
+    border: 1px dashed #ced4da; /* Diferenciador visual sutil para el Braille */
 }
 
-.table-link{
-    color: blue;
-}
-.table-link:hover{
-    color: red;
-}
-
-.tabla-scroll {
-    max-height: 350px;    /* altura aprox. para 6 filas; ajusta si deseas */
-    overflow-y: auto;
-}
-
+/* =========================================
+   CONTENEDORES Y SECCIONES
+========================================= */
 .main-enhanced {
     background-color: #ffffff;
-    box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+    box-shadow: var(--shadow-soft);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0,0,0,0.02);
 }
 
 .lesson-section {
-    background-color: #f0f8ff;
-    box-shadow: inset 0 1px 6px rgb(0 0 0 / 0.05);
+    background-color: #ffffff;
+    border: 1px solid #eef2f5;
+    box-shadow: var(--shadow-soft);
     margin-bottom: 2rem;
-    padding: 1.5rem;
-    border-radius: 15px;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    transition: transform 0.3s ease;
+}
+
+.lesson-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .lesson-section h2 {
-    color: #0d6efd; /* Bootstrap primary blue */
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+}
+
+/* =========================================
+   TABLAS (Dashboard)
+========================================= */
+.tabla-scroll {
+    max-height: 400px;    
+    overflow-y: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    background: #fff;
+    padding: 15px;
+}
+
+.table-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.table-link:hover {
+    color: #dc3545;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.background_footer {
+    background-color: var(--bg-footer);
+    color: #ffffff !important;
+    margin-top: 4rem;
+}
+
+.background_footer h2.text-primary {
+    color: #c4dafa !important; /* Azul más claro para contraste en fondo oscuro */
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.background_footer article, .background_footer p {
+    color: #adb5bd !important;
+}
+
+.nav-link.footer-btn, .background_footer a {
+    color: #adb5bd !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0;
+}
+
+.nav-link.footer-btn:hover, .background_footer a:hover {
+    color: #ffffff !important;
+    transform: translateX(5px); /* Pequeña animación hacia la derecha */
+    display: inline-block;
+}
+
+.background_footer hr {
+    border-color: rgba(255, 255, 255, 0.1);
 }
