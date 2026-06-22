@@ -97,7 +97,6 @@
         <!-- MAPA DE NIVELES -->
         <section id="mapaNiveles" class="row g-4 justify-content-center">
             
-            <!-- Nivel 1 (Desbloqueado por defecto) -->
             <article class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm lesson-section text-center p-4 nivel-card" id="card-nivel-1" onclick="abrirNivel(1)">
                     <div class="mb-3">
@@ -109,7 +108,6 @@
                 </div>
             </article>
 
-            <!-- Nivel 2 (Bloqueado) -->
             <article class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm lesson-section text-center p-4 nivel-card opaco" id="card-nivel-2" onclick="abrirNivel(2)">
                     <div class="mb-3">
@@ -121,7 +119,6 @@
                 </div>
             </article>
 
-            <!-- Nivel 3 (Bloqueado) -->
             <article class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm lesson-section text-center p-4 nivel-card opaco" id="card-nivel-3" onclick="abrirNivel(3)">
                     <div class="mb-3">
@@ -132,6 +129,29 @@
                     <span class="badge bg-secondary rounded-pill px-3 py-2" id="badge-nivel-3">🔒 Bloqueado</span>
                 </div>
             </article>
+
+            <article class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm lesson-section text-center p-4 nivel-card opaco" id="card-nivel-4" onclick="abrirNivel(4)">
+                    <div class="mb-3">
+                        <span class="display-4">⚖️</span>
+                    </div>
+                    <h3 class="h5 fw-bold text-secondary">Nivel 4: Reglas de Contracción</h3>
+                    <p class="text-muted mb-3 justificado">Domina las normativas de acentuación y prioridad en estenografía.</p>
+                    <span class="badge bg-secondary rounded-pill px-3 py-2" id="badge-nivel-4">🔒 Bloqueado</span>
+                </div>
+            </article>
+
+            <article class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm lesson-section text-center p-4 nivel-card opaco" id="card-nivel-5" onclick="abrirNivel(5)">
+                    <div class="mb-3">
+                        <span class="display-4">🛑</span>
+                    </div>
+                    <h3 class="h5 fw-bold text-secondary">Nivel 5: Interruptor Estenográfico</h3>
+                    <p class="text-muted mb-3 justificado">Aprende a usar los diferenciadores para evitar confusiones de lectura.</p>
+                    <span class="badge bg-secondary rounded-pill px-3 py-2" id="badge-nivel-5">🔒 Bloqueado</span>
+                </div>
+            </article>
+
         </section>
 
         <!-- CONTENEDOR DE LA LECCIÓN (Oculto por defecto) -->
