@@ -338,9 +338,10 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     
     <!-- PASAR VARIABLE PHP A JS -->
-    <script>
+<script>
         const nivelGuardadoUsuario = <?php echo isset($_SESSION['nivel_leccion']) ? $_SESSION['nivel_leccion'] : 1; ?>;
     </script>
-    <script src="../js/lecciones.js"></script>
+    
+    <script src="../js/lecciones.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

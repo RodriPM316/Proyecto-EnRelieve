@@ -2,14 +2,13 @@ const lecciones = {
     1: {
         titulo: "El Alfabeto Braille (Grado 1)",
         contenido: `
-            <p class="fs-5 justificado">El Braille de <strong>Grado 1</strong> es la forma literal del sistema, donde cada celda representa exactamente una letra del alfabeto, un número o un signo de puntuación. Es la base para cualquier persona que inicie en el mundo de la lectoescritura táctil.</p>
+            <p class="fs-5 justificado">El Braille de <strong>Grado 1</strong> es la forma literal del sistema, donde cada celda o "cajetín" representa exactamente una letra del alfabeto, un número o un signo de puntuación. Es la base fundamental para cualquier persona que inicie en el mundo de la lectoescritura táctil.</p>
+            <p class="fs-5 justificado">El cajetín generador está formado por <strong>6 puntos</strong> distribuidos en dos columnas de tres puntos cada una. Al numerarlos, la columna izquierda contiene los puntos 1, 2 y 3 (de arriba hacia abajo), y la columna derecha los puntos 4, 5 y 6. Combinando estos puntos en relieve, se pueden crear hasta 64 caracteres distintos, suficientes para representar todo el alfabeto.</p>
             
             <div class="ratio ratio-16x9 rounded shadow-sm mx-auto overflow-hidden mt-4 mb-2" style="max-width: 700px;">
-                <video controls>
-                    <source src="../video/Alfabeto_Braille.mp4" type="video/mp4">
-                    Tu navegador no soporta el elemento de video.
-                </video>
+                <iframe src="https://www.youtube.com/embed/ppUkMPIikqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
+            <p class="text-center text-muted small mb-4">Créditos del material: <a href="https://www.youtube.com/watch?v=ppUkMPIikqI" target="_blank">YouTube</a></p>
         `,
         preguntas: [
             {
@@ -29,13 +28,32 @@ const lecciones = {
                     "8 puntos"
                 ],
                 respuestaCorrecta: 1 
+            },
+            {
+                texto: "3. ¿Cómo están distribuidos los puntos en un cajetín Braille estándar?",
+                opciones: [
+                    "En una sola línea horizontal.",
+                    "En dos columnas de tres puntos cada una.",
+                    "En un círculo de seis puntos."
+                ],
+                respuestaCorrecta: 1 
+            },
+            {
+                texto: "4. ¿Cuántas combinaciones diferentes permite crear el cajetín de 6 puntos?",
+                opciones: [
+                    "Hasta 27 combinaciones.",
+                    "Hasta 64 combinaciones.",
+                    "Infinitas combinaciones."
+                ],
+                respuestaCorrecta: 1 
             }
         ]
     },
     2: {
         titulo: "La Magia de la Numeración",
         contenido: `
-            <p class="fs-5 justificado">En Braille, no existen símbolos únicos para los números. Para representarlos, utilizamos las primeras 10 letras del alfabeto (de la 'a' a la 'j') y las antecedemos con un símbolo especial llamado <strong>prefijo numérico</strong> (puntos 3, 4, 5, 6).</p>
+            <p class="fs-5 justificado">Una de las genialidades del sistema ideado por Louis Braille es su eficiencia. En lugar de inventar símbolos completamente nuevos para los números, el Braille recicla las primeras 10 letras del alfabeto (de la 'a' a la 'j').</p>
+            <p class="fs-5 justificado">Para indicar que estas letras deben leerse como números, se utiliza un símbolo especial llamado <strong>prefijo numérico</strong>, formado por los puntos 3, 4, 5 y 6. Cuando este prefijo aparece, todas las letras de la 'a' a la 'j' que le sigan directamente (sin espacios) se convierten en números automáticamente (la 'a' es 1, la 'b' es 2, y la 'j' es 0).</p>
             
             <div class="ratio ratio-16x9 rounded shadow-sm mx-auto overflow-hidden mt-4 mb-2" style="max-width: 700px;">
                 <video controls>
@@ -62,69 +80,115 @@ const lecciones = {
                     "Puntos 2, 4, 6"
                 ],
                 respuestaCorrecta: 1 
+            },
+            {
+                texto: "3. ¿Qué letra del alfabeto se utiliza para representar el número 0?",
+                opciones: [
+                    "La letra 'a'.",
+                    "La letra 'z'.",
+                    "La letra 'j'."
+                ],
+                respuestaCorrecta: 2 
+            },
+            {
+                texto: "4. ¿Hasta cuándo se mantiene el efecto del prefijo numérico?",
+                opciones: [
+                    "Hasta que aparece un espacio u otro signo no numérico.",
+                    "Hasta que termina la página.",
+                    "Solo afecta a un solo dígito a la vez."
+                ],
+                respuestaCorrecta: 0 
             }
         ]
     },
     3: {
         titulo: "Braille Estenográfico (Grado 2)",
         contenido: `
-            <p class="fs-5 justificado">A diferencia del Grado 1, el <strong>Grado 2</strong> utiliza contracciones. Esto significa que un solo símbolo puede representar palabras comunes completas (como "que", "con", "de", "el"). Esto acelera la lectura y ahorra espacio en los libros impresos en relieve.</p>
+            <p class="fs-5 justificado">El <strong>Grado 2</strong>, también conocido como Braille Estenográfico, surge de una necesidad física: los libros impresos en Braille ocupan un volumen inmenso. Un libro de texto normal puede requerir múltiples tomos pesados si se imprime en Grado 1.</p>
+            <p class="fs-5 justificado">Para solucionar esto, la estenografía utiliza <strong>contracciones</strong>. Esto significa que un solo símbolo o una combinación corta puede representar palabras de uso muy frecuente (como "que", "con", "de", "el", "la"), así como prefijos o sufijos (como "ción", "mente"). Al aplicar estas reglas, se logra reducir drásticamente el espacio que ocupa el texto y, además, permite a los usuarios avanzados leer con mucha mayor fluidez y velocidad.</p>
         `,
         preguntas: [
             {
                 texto: "1. ¿Cuál es el principal beneficio del Braille de Grado 2?",
                 opciones: [
-                    "Permitir la lectura en otros idiomas.",
-                    "Ahorrar espacio y acelerar la lectura mediante contracciones.",
-                    "Hacer los puntos más grandes para mayor sensibilidad."
+                    "Permitir la lectura en otros idiomas simultáneamente.",
+                    "Ahorrar espacio en el papel y acelerar la lectura táctil.",
+                    "Hacer los puntos más grandes para personas con menor sensibilidad táctil."
                 ],
                 respuestaCorrecta: 1
+            },
+            {
+                texto: "2. ¿Qué es exactamente una 'contracción' en este contexto?",
+                opciones: [
+                    "Un símbolo que representa una palabra completa, prefijo o sufijo.",
+                    "Un error de impresión que junta dos letras.",
+                    "Un método para saltarse las vocales de todas las palabras."
+                ],
+                respuestaCorrecta: 0
+            },
+            {
+                texto: "3. ¿Por qué es fundamental la estenografía en la publicación de libros en Braille?",
+                opciones: [
+                    "Porque las impresoras Braille no pueden imprimir todas las letras del Grado 1.",
+                    "Porque reduce significativamente el volumen físico y la cantidad de papel requerido.",
+                    "Porque el Grado 1 está en desuso y ya no se enseña."
+                ],
+                respuestaCorrecta: 1
+            },
+            {
+                texto: "4. Al aprender Grado 2, ¿se elimina por completo el uso del Grado 1?",
+                opciones: [
+                    "No, el Grado 1 sigue siendo la base para las palabras que no tienen contracción.",
+                    "Sí, el Grado 2 reemplaza absolutamente todo el alfabeto original.",
+                    "Solo se usa Grado 1 para escribir números, el resto es Grado 2."
+                ],
+                respuestaCorrecta: 0
             }
         ]
     },
     4: {
         titulo: "Reglas de Contracción (Grado 2)",
         contenido: `
-            <p class="fs-5 justificado">La estenografía tiene reglas estrictas para evitar confusiones al leer. Dos de las reglas más importantes extraídas de la normativa oficial son:</p>
+            <p class="fs-5 justificado">La estenografía no es aleatoria; tiene normas ortográficas estrictas creadas para evitar confusiones severas al leer con el tacto. Dos de las reglas más importantes extraídas de la normativa oficial de estenografía española son las siguientes:</p>
             <ul class="fs-5 justificado text-dark mb-4">
-                <li class="mb-2"><strong>Acentos:</strong> Las letras que llevan acento ortográfico no formarán contracciones.</li>
-                <li><strong>Prioridad:</strong> Cuando una letra pueda ser contraída con la anterior o la posterior, indistintamente, se contraerá siempre con la posterior.</li>
+                <li class="mb-3"><strong>Acentos ortográficos:</strong> Las letras que llevan acento ortográfico o tilde (á, é, í, ó, ú) pierden su capacidad de formar contracciones. Esto se debe a que la vocal acentuada tiene una representación en Braille totalmente distinta a la vocal normal, lo que rompe la estructura del símbolo contraído.</li>
+                <li class="mb-2"><strong>Prioridad de contracción:</strong> En ocasiones, una misma letra en medio de una palabra podría formar una contracción con la letra que está a su izquierda o con la que está a su derecha. La norma dicta que, ante esta ambigüedad, la letra se contraerá siempre con la <em>posterior</em> (la de su derecha).</li>
             </ul>
         `,
         preguntas: [
             {
                 texto: "1. Si una palabra tiene una letra con acento ortográfico (como la 'á' en 'más'), ¿qué ocurre en el Grado 2?",
                 opciones: [
-                    "Se crea una contracción especial para acentos.",
-                    "Esa letra no formará contracción.",
-                    "Se elimina el acento para ahorrar espacio."
+                    "Se crea una contracción especial exclusivamente para acentos.",
+                    "Esa letra pierde su capacidad de formar una contracción.",
+                    "Se elimina el acento ortográfico para ahorrar espacio."
                 ],
                 respuestaCorrecta: 1
             },
             {
                 texto: "2. Si una letra puede contraerse con la que está a su izquierda o a su derecha, ¿qué regla se aplica?",
                 opciones: [
-                    "Se contrae siempre con la letra anterior.",
-                    "Se contrae siempre con la letra posterior (la de su derecha).",
-                    "El traductor elige aleatoriamente."
+                    "Se contrae siempre con la letra anterior (izquierda).",
+                    "Se contrae siempre con la letra posterior (derecha).",
+                    "Queda a criterio personal del traductor."
                 ],
                 respuestaCorrecta: 1
             },
             {
                 texto: "3. Aplicando la regla de los acentos, si traducimos la palabra 'canción', ¿la 'ó' podría contraerse con la 'n' final?",
                 opciones: [
-                    "No, porque la 'ó' lleva acento ortográfico y se rompe la contracción.",
-                    "Sí, porque están al final de la palabra.",
-                    "Sí, el acento no afecta las contracciones finales."
+                    "No, porque la 'ó' lleva tilde y rompe la posible contracción.",
+                    "Sí, porque están al final de la palabra y tienen prioridad.",
+                    "Sí, el acento no interfiere con los sufijos."
                 ],
                 respuestaCorrecta: 0
             },
             {
-                texto: "4. ¿Cuál es el propósito principal de estas reglas estrictas de contracción?",
+                texto: "4. ¿Cuál es el propósito principal de implementar estas reglas estrictas en las contracciones?",
                 opciones: [
-                    "Hacer que el sistema Braille se vea más estético.",
-                    "Garantizar que la lectura táctil sea clara y evitar ambigüedades.",
-                    "Aumentar la dificultad del aprendizaje del Braille."
+                    "Hacer que el sistema Braille luzca más profesional al imprimirse.",
+                    "Garantizar que la decodificación táctil sea exacta y evitar ambigüedades de significado.",
+                    "Aumentar la dificultad técnica del aprendizaje del Braille."
                 ],
                 respuestaCorrecta: 1
             }
@@ -133,16 +197,17 @@ const lecciones = {
     5: {
         titulo: "El Interruptor Estenográfico",
         contenido: `
-            <p class="fs-5 justificado">Existe un signo llamado <strong>interruptor estenográfico</strong> que le indica al lector que la palabra a continuación no está contraída y debe leerse de forma integral (Grado 1).</p>
-            <p class="fs-5 justificado">Se utiliza obligatoriamente delante de las conjunciones 'e' y 'u'. ¿El motivo? Evitar confusiones catastróficas de lectura, ya que sin el interruptor podrían confundirse con los vocablos abreviados 'el' y 'un'.</p>
+            <p class="fs-5 justificado">A pesar de las reglas ortográficas, hay símbolos que por sí solos pueden generar ambigüedades graves. Para resolverlo, el Braille cuenta con un signo de control esencial llamado <strong>interruptor estenográfico</strong>.</p>
+            <p class="fs-5 justificado">Este símbolo especial funciona como una advertencia para el lector. Le indica que la palabra, letra o signo que se encuentra inmediatamente después no forma parte de ninguna contracción y debe interpretarse de manera integral (como en el Grado 1).</p>
+            <p class="fs-5 justificado">Su uso es <em>obligatorio</em> delante de las conjunciones aisladas 'e' y 'u'. ¿El motivo? En estenografía, si la letra 'e' se encuentra sola, representa la contracción de la palabra "el"; y si la letra 'u' está sola, representa "un". Sin el interruptor, la frase "Juan e Ignacio" se leería táctilmente como "Juan el Ignacio", cambiando totalmente el sentido del texto.</p>
         `,
         preguntas: [
             {
                 texto: "1. ¿Cuál es la función exacta del interruptor estenográfico?",
                 opciones: [
-                    "Avisar que el siguiente párrafo es un título importante.",
-                    "Indicar que la siguiente palabra debe leerse letra por letra (Grado 1).",
-                    "Separar los números de las letras en una misma línea."
+                    "Avisar que el siguiente párrafo es un título o resaltado importante.",
+                    "Indicar que la siguiente palabra no tiene contracción y debe leerse integralmente.",
+                    "Separar bloques de texto que contienen números y letras."
                 ],
                 respuestaCorrecta: 1
             },
@@ -158,18 +223,18 @@ const lecciones = {
             {
                 texto: "3. ¿Qué sucedería si escribes la conjunción 'e' aislada sin utilizar el interruptor estenográfico?",
                 opciones: [
-                    "Un lector de Braille Grado 2 la leería erróneamente como la palabra 'el'.",
-                    "Se leería como un espacio en blanco.",
-                    "No pasaría nada, el contexto aclararía el significado."
+                    "Un lector de Grado 2 la decodificaría erróneamente como la palabra 'el'.",
+                    "Se leería como un simple espacio en blanco extendido.",
+                    "No pasaría nada, el lector lo deduce por el contexto."
                 ],
                 respuestaCorrecta: 0
             },
             {
                 texto: "4. Al igual que el prefijo numérico transforma letras en números, el interruptor estenográfico...",
                 opciones: [
-                    "Transforma números en letras.",
-                    "Anula temporalmente las reglas de contracción del Grado 2.",
-                    "Cambia el idioma del texto a inglés."
+                    "Transforma números en letras del alfabeto.",
+                    "Anula temporalmente las reglas de contracción estenográfica.",
+                    "Cambia la puntuación de la línea en la que se encuentra."
                 ],
                 respuestaCorrecta: 1
             }
