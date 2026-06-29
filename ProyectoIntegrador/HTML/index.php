@@ -14,7 +14,8 @@
     <link rel="icon" type="image/png" href="../image/icon-page.png">
 
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    
+    <link rel="stylesheet" href="../css/styles.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <header>
@@ -41,6 +42,10 @@
                     </form>
 
                     <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link nav-btn px-3 py-2 text-dark" href="index.php#nosotros">Nosotros</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link nav-btn px-3 py-2" aria-current="page" href="translate.php">Traductor</a>
                         </li>
@@ -80,6 +85,31 @@
     <div style="height: 100px;"></div>
 
     <main class="container my-5">
+        <section class="interactive-banner mb-5 position-relative overflow-hidden rounded-4 shadow-lg">
+            <div class="banner-background"></div>
+            
+            <div class="row align-items-center position-relative z-1 h-100 p-4 p-md-5">
+                <div class="col-lg-7 text-white text-center text-lg-start">
+                    <span class="badge bg-white text-primary mb-3 px-3 py-2 rounded-pill fw-bold text-uppercase" style="letter-spacing: 1px;">
+                        Innovación Inclusiva
+                    </span>
+                    <h2 class="display-5 fw-bold mb-3 banner-title">Siente la tecnología en tus manos</h2>
+                    <p class="fs-5 mb-4 opacity-75">
+                        Conecta nuestra plataforma web con el módulo táctil de servomotores. Traduce, aprende y experimenta el Braille en tiempo real.
+                    </p>
+                    <a href="translate.php" class="btn btn-light btn-lg text-primary fw-bold px-4 rounded-pill shadow-sm banner-btn">
+                        Explorar el Traductor <span class="ms-2">→</span>
+                    </a>
+                </div>
+                
+                <div class="col-lg-5 d-none d-lg-block position-relative">
+                    <div class="floating-images">
+                        <img src="../image/Braille3.jpg" alt="Interacción Braille" class="img-fluid rounded-4 shadow-lg floating-img img-1">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SECCIÓN HERO -->
         <section class="row align-items-center mb-5 bg-white rounded shadow-sm main-enhanced p-4 p-md-5">
             <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
@@ -186,6 +216,22 @@
             </div>
         </section>
 
+        <section id="nosotros" class="mb-5 py-5 bg-light rounded-4 shadow-sm px-4 px-md-5 border border-white">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2 rounded-pill fw-semibold">Nuestro Propósito</span>
+                    <h2 class="fw-bold text-dark display-6 mb-4">Sobre <span class="text-primary">EnRelieve</span></h2>
+                    <p class="fs-5 text-muted justificado">Trabajamos para impulsar la inclusión mediante soluciones tecnológicas accesibles. Desarrollamos un traductor web que convierte texto a Braille en tiempo real y lo envía a un sistema físico controlado por Arduino.</p>
+                    <p class="fs-5 text-muted justificado mb-0">Allí, servomotores representan cada carácter en un módulo táctil, permitiendo que las personas con discapacidad visual puedan percibir mediante el tacto la información mostrada en pantalla.</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="ratio ratio-4x3 rounded-4 shadow-sm overflow-hidden bg-white d-flex align-items-center justify-content-center border" style="min-height: 250px;">
+                        <span class="text-muted fw-semibold px-4">📸 [Aquí puedes colocar una fotografía real de tu integración con Arduino]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- LLAMADO A LA ACCIÓN FINAL -->
         <?php if (empty($_SESSION['usuario'])): ?>
         <section class="bg-primary text-white rounded shadow-sm p-5 text-center position-relative overflow-hidden mb-2">
@@ -198,54 +244,35 @@
         <?php endif; ?>
     </main>
         
-    <footer class="container-fluid background_footer text-dark pt-5 pb-4">
+    <footer class="container-fluid background_footer text-dark pt-4 pb-3 mt-auto">
         <section class="container text-center text-md-start">
-            <div class="row text-center text-md-start g-4">
-                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
-                    <h2 class="text-uppercase mb-4 font-weight-bold text-primary">Nosotros</h2>
-                    <hr class="mb-4">
-                    <article class="justificado">
-                        En EnRelieve trabajamos para impulsar la inclusión mediante soluciones tecnológicas accesibles. 
-                        Desarrollamos un traductor web que convierte texto a Braille en tiempo real y lo envía a un sistema físico 
-                        controlado por Arduino, donde servomotores representan cada carácter en un módulo táctil. 
-                        Así, las personas con discapacidad visual pueden percibir mediante el tacto la información mostrada en pantalla.
-                    </article>
+            <div class="row align-items-center g-4">
+                <div class="col-md-4 col-lg-5 mb-3 mb-md-0">
+                    <h4 class="text-primary fw-bold mb-2">EnRelieve</h4>
+                    <p class="text-muted small mb-0">Tecnología e inclusión al alcance de tus manos.</p>
                 </div>
 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h2 class="text-uppercase mb-4 font-weight-bold text-primary">Legal</h2>
-                    <hr class="mb-4">
-                    <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <a class="nav-link footer-btn d-inline-block" href="#" data-bs-toggle="modal" data-bs-target="#terminosYCondiciones">
-                                Términos y Condiciones
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link footer-btn d-inline-block" href="#" data-bs-toggle="modal" data-bs-target="#avisoPrivacidad">
-                                Aviso de Privacidad
-                            </a>
-                        </li>
+                <div class="col-md-4 col-lg-3">
+                    <h6 class="text-uppercase fw-bold text-white mb-3">Legal</h6>
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                        <li><a class="nav-link footer-btn d-inline-block small p-0" href="#" data-bs-toggle="modal" data-bs-target="#terminosYCondiciones">Términos y Condiciones</a></li>
+                        <li><a class="nav-link footer-btn d-inline-block small p-0" href="#" data-bs-toggle="modal" data-bs-target="#avisoPrivacidad">Aviso de Privacidad</a></li>
                     </ul>
                 </div>
 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h2 class="text-uppercase mb-4 font-weight-bold text-primary">Déjanos ayudarte</h2>
-                    <hr class="mb-4">
-                    <nav>
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><a href="#" class="footer-btn d-inline-block">Contacto</a></li>
-                            <li><a href="#" class="footer-btn d-inline-block">Preguntas frecuentes</a></li>
-                        </ul>
-                    </nav>
+                <div class="col-md-4 col-lg-4">
+                    <h6 class="text-uppercase fw-bold text-white mb-3">Ayuda</h6>
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                        <li><a href="#" class="nav-link footer-btn d-inline-block small p-0">Contacto</a></li>
+                        <li><a href="#" class="nav-link footer-btn d-inline-block small p-0">Preguntas frecuentes</a></li>
+                    </ul>
                 </div>
-
-                <div class="col-12">
-                    <hr class="mb-4">
-                    <section class="text-center mb-2">
-                        <p class="m-0">Copyright En Relieve - 2025. Todos los derechos reservados.</p>
-                    </section>
-                </div>
+            </div>
+            
+            <hr class="my-4 border-light opacity-25">
+            
+            <div class="text-center">
+                <p class="m-0 small text-muted">Copyright En Relieve - 2026. Todos los derechos reservados.</p>
             </div>
         </section>
     </footer>

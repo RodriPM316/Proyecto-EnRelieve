@@ -125,54 +125,35 @@
         </section>
     </main>
 
-    <footer class="container-fluid background_footer text-dark pt-5 pb-4">
+    <footer class="container-fluid background_footer text-dark pt-4 pb-3 mt-auto">
         <section class="container text-center text-md-start">
-            <div class="row text-center text-md-start g-4">
-                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
-                    <h2 class="text-uppercase mb-4 font-weight-bold text-primary">Nosotros</h2>
-                    <hr class="mb-4">
-                    <article class="justificado">
-                        En EnRelieve trabajamos para impulsar la inclusión mediante soluciones tecnológicas accesibles. 
-                        Desarrollamos un traductor web que convierte texto a Braille en tiempo real y lo envía a un sistema físico 
-                        controlado por Arduino, donde servomotores representan cada carácter en un módulo táctil. 
-                        Así, las personas con discapacidad visual pueden percibir mediante el tacto la información mostrada en pantalla.
-                    </article>
+            <div class="row align-items-center g-4">
+                <div class="col-md-4 col-lg-5 mb-3 mb-md-0">
+                    <h4 class="text-primary fw-bold mb-2">EnRelieve</h4>
+                    <p class="text-muted small mb-0">Tecnología e inclusión al alcance de tus manos.</p>
                 </div>
 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h2 class="text-uppercase mb-4 font-weight-bold text-primary">Legal</h2>
-                    <hr class="mb-4">
-                    <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <a class="nav-link footer-btn d-inline-block" href="#" data-bs-toggle="modal" data-bs-target="#terminosYCondiciones">
-                                Términos y Condiciones
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link footer-btn d-inline-block" href="#" data-bs-toggle="modal" data-bs-target="#avisoPrivacidad">
-                                Aviso de Privacidad
-                            </a>
-                        </li>
+                <div class="col-md-4 col-lg-3">
+                    <h6 class="text-uppercase fw-bold text-white mb-3">Legal</h6>
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                        <li><a class="nav-link footer-btn d-inline-block small p-0" href="#" data-bs-toggle="modal" data-bs-target="#terminosYCondiciones">Términos y Condiciones</a></li>
+                        <li><a class="nav-link footer-btn d-inline-block small p-0" href="#" data-bs-toggle="modal" data-bs-target="#avisoPrivacidad">Aviso de Privacidad</a></li>
                     </ul>
                 </div>
 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h2 class="text-uppercase mb-4 font-weight-bold text-primary">Déjanos ayudarte</h2>
-                    <hr class="mb-4">
-                    <nav>
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><a href="#" class="footer-btn d-inline-block">Contacto</a></li>
-                            <li><a href="#" class="footer-btn d-inline-block">Preguntas frecuentes</a></li>
-                        </ul>
-                    </nav>
+                <div class="col-md-4 col-lg-4">
+                    <h6 class="text-uppercase fw-bold text-white mb-3">Ayuda</h6>
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                        <li><a href="#" class="nav-link footer-btn d-inline-block small p-0">Contacto</a></li>
+                        <li><a href="#" class="nav-link footer-btn d-inline-block small p-0">Preguntas frecuentes</a></li>
+                    </ul>
                 </div>
-
-                <div class="col-12">
-                    <hr class="mb-4">
-                    <section class="text-center mb-2">
-                        <p class="m-0">Copyright En Relieve - 2025. Todos los derechos reservados.</p>
-                    </section>
-                </div>
+            </div>
+            
+            <hr class="my-4 border-light opacity-25">
+            
+            <div class="text-center">
+                <p class="m-0 small text-muted">Copyright En Relieve - 2026. Todos los derechos reservados.</p>
             </div>
         </section>
     </footer>
