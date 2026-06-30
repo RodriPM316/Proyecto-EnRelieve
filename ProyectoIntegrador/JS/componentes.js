@@ -108,3 +108,91 @@ function mostrarAlerta(mensaje, tipo = 'danger') {
         toastEl.remove();
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navbar = document.getElementById('mainNavbar');
+    const menuColapsable = document.getElementById('navbarnavigation');
+    
+    // Función para manejar el cambio visual del Navbar
+    function onScroll() {
+        // Si el usuario baja más de 50px
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
+            navbar.classList.remove('navbar-transparent');
+        } else {
+            // Solo lo vuelve transparente si el menú móvil NO está abierto
+            if (!menuColapsable.classList.contains('show')) {
+                navbar.classList.remove('navbar-scrolled');
+                navbar.classList.add('navbar-transparent');
+            }
+        }
+    }
+
+    // Escuchar el evento scroll
+    window.addEventListener('scroll', onScroll);
+
+    // Asegurar que el navbar tenga fondo sólido cuando se abre el menú móvil (botón hamburguesa)
+    menuColapsable.addEventListener('show.bs.collapse', function () {
+        navbar.classList.add('navbar-scrolled');
+        navbar.classList.remove('navbar-transparent');
+    });
+
+    // Restaurar la transparencia si se cierra el menú móvil y estamos hasta arriba
+    menuColapsable.addEventListener('hidden.bs.collapse', function () {
+        if (window.scrollY <= 50) {
+            navbar.classList.remove('navbar-scrolled');
+            navbar.classList.add('navbar-transparent');
+        }
+    });
+});
+
+// ==========================================
+// LÓGICA DE MODO OSCURO (DARK MODE)
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+    const htmlElement = document.documentElement;
+
+    // 1. Revisar si hay un tema guardado en localStorage
+    const savedTheme = localStorage.getItem('theme');
+    
+    // 2. Aplicar el tema guardado o el preferido por el sistema
+    if (savedTheme) {
+        htmlElement.setAttribute('data-bs-theme', savedTheme);
+        actualizarIconos(savedTheme);
+    } else {
+        // Detectar preferencia del sistema operativo
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+            htmlElement.setAttribute('data-bs-theme', 'dark');
+            actualizarIconos('dark');
+        }
+    }
+
+    // 3. Evento para cambiar el tema al hacer clic
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            actualizarIconos(newTheme);
+        });
+    }
+
+    // Función auxiliar para cambiar qué icono se muestra
+    function actualizarIconos(tema) {
+        if (!sunIcon || !moonIcon) return;
+        
+        if (tema === 'dark') {
+            sunIcon.classList.remove('d-none');
+            moonIcon.classList.add('d-none');
+        } else {
+            moonIcon.classList.remove('d-none');
+            sunIcon.classList.add('d-none');
+        }
+    }
+});

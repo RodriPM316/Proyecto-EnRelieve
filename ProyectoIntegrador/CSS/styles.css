@@ -16,6 +16,61 @@
     --radius-md: 12px;
 }
 
+/* =========================================
+   MODO OSCURO (DARK MODE)
+========================================= */
+[data-bs-theme="dark"] {
+    --bg-main: #121212;
+    --bg-navbar: rgba(26, 29, 32, 0.9);
+    --bg-footer: #0a0a0a;
+    --text-main: #e1e5eb;
+    --text-muted: #a0aab5;
+    /* Un azul ligeramente más suave para no lastimar la vista en fondos oscuros */
+    --primary-color: #3b82f6; 
+    --primary-hover: #60a5fa;
+    --accent-color: #212529;
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 12px 40px rgba(59, 130, 246, 0.2);
+}
+
+/* Forzar fondos oscuros en contenedores clave cuando el tema sea dark */
+[data-bs-theme="dark"] body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+[data-bs-theme="dark"] .main-enhanced,
+[data-bs-theme="dark"] .lesson-section,
+[data-bs-theme="dark"] .card-interactive,
+[data-bs-theme="dark"] .bg-white,
+[data-bs-theme="dark"] .bg-light {
+    background-color: #1e1e1e !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-main) !important;
+}
+
+[data-bs-theme="dark"] .offcanvas-glass {
+    background-color: rgba(33, 37, 41, 0.85) !important;
+    border-left-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .textarea-estilizado,
+[data-bs-theme="dark"] .form-control-premium {
+    background-color: #2a2a2a;
+    border-color: #3a3a3a;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .textarea-estilizado:disabled {
+    background-color: #1f1f1f !important;
+    border-color: #444;
+}
+
+/* Invertir el color del icono del navbar transparente en modo oscuro */
+[data-bs-theme="dark"] .navbar-transparent .navbar-brand img {
+    filter: drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.2));
+}
+
 /* Comportamiento de scroll suave para toda la página */
 html {
     scroll-behavior: smooth;
@@ -95,6 +150,43 @@ main {
 .nav-link.disable {
     color: var(--text-muted);
     pointer-events: none;
+}
+
+/* =========================================
+   NAVBAR DINÁMICO
+========================================= */
+/* Estado base: Transparente (En la cima de la página) */
+.navbar-transparent {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid transparent;
+    padding: 1rem 0; /* Un poco más alto al inicio para dar respiro */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Estado activo: Scrolleado (Efecto Glassmorphism) */
+.navbar-scrolled {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-soft) !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 0.5rem 0; /* Se hace ligeramente más delgado al scrollear */
+}
+
+/* Transición suave para el logo al hacer scroll */
+.navbar .logo-navbar {
+    transition: all 0.4s ease;
+}
+
+.navbar-scrolled .logo-navbar {
+    transform: scale(0.9); /* Se reduce un 10% para no ocupar tanta pantalla */
+}
+
+/* Asegurar que los enlaces se vean bien sobre el fondo transparente (si es oscuro) */
+.navbar-transparent .nav-link.nav-btn,
+.navbar-transparent .navbar-text {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Ligera sombra para asegurar contraste */
 }
 
 /* Buscador */

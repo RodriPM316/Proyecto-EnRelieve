@@ -18,15 +18,16 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg background_navbar fixed-top">
+        <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-transparent">
             <div class="container-fluid px-4">
+                
                 <a class="navbar-brand me-4" href="index.php">
                     <figure class="m-0">
                         <img src="../image/logo.png" alt="Logo de EnRelieve" class="logo-navbar">
                     </figure>
                 </a>
 
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarnavigation" aria-controls="navbarnavigation" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarnavigation" aria-controls="navbarnavigation" aria-expanded="false" aria-label="Abrir menú de navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -44,7 +45,7 @@
                         <li class="nav-item">
                             <a class="nav-link nav-btn px-3 py-2 text-dark" href="index.php#nosotros">Nosotros</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link nav-btn px-3 py-2 active fw-bold text-primary" aria-current="page" href="translate.php">Traductor</a>
                         </li>
