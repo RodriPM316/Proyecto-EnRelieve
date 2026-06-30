@@ -85,93 +85,40 @@
     <div style="height: 100px;"></div>
 
     <main class="container my-5">
-        <section class="interactive-banner mb-5 position-relative overflow-hidden rounded-4 shadow-lg">
+
+        <!-- SÚPER HERO UNIFICADO -->
+        <section class="interactive-banner position-relative overflow-hidden rounded-4 shadow-lg mb-5 mt-4 mx-3 mx-md-0">
             <div class="banner-background"></div>
             
             <div class="row align-items-center position-relative z-1 h-100 p-4 p-md-5">
-                <div class="col-lg-7 text-white text-center text-lg-start">
-                    <span class="badge bg-white text-primary mb-3 px-3 py-2 rounded-pill fw-bold text-uppercase" style="letter-spacing: 1px;">
-                        Innovación Inclusiva
+                <!-- Columna de Texto y Llamados a la Acción -->
+                <div class="col-lg-6 text-white text-center text-lg-start mb-4 mb-lg-0">
+                    <span class="badge bg-white text-primary mb-3 px-3 py-2 rounded-pill fw-bold text-uppercase shadow-sm" style="letter-spacing: 1px;">
+                        Innovación e Inclusión
                     </span>
-                    <h2 class="display-5 fw-bold mb-3 banner-title">Siente la tecnología en tus manos</h2>
-                    <p class="fs-5 mb-4 opacity-75">
-                        Conecta nuestra plataforma web con el módulo táctil de servomotores. Traduce, aprende y experimenta el Braille en tiempo real.
+                    <h1 class="display-4 fw-bold mb-3 banner-title">La tecnología al servicio de la inclusión</h1>
+                    <p class="fs-5 mb-4 opacity-75" style="max-width: 90%;">
+                        EnRelieve traduce texto del español a Braille en tiempo real y lo conecta con un módulo físico táctil de servomotores. Siente la tecnología en tus manos.
                     </p>
-                    <a href="translate.php" class="btn btn-light btn-lg text-primary fw-bold px-4 rounded-pill shadow-sm banner-btn">
-                        Explorar el Traductor <span class="ms-2">→</span>
-                    </a>
-                </div>
-                
-                <div class="col-lg-5 d-none d-lg-block position-relative">
-                    <div class="floating-images">
-                        <img src="../image/Braille3.jpg" alt="Interacción Braille" class="img-fluid rounded-4 shadow-lg floating-img img-1">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN HERO -->
-        <section class="row align-items-center mb-5 bg-white rounded shadow-sm main-enhanced p-4 p-md-5">
-            <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill fw-semibold">Plataforma Inclusiva</span>
-                <h1 class="display-4 fw-bold text-dark mb-3">La tecnología al servicio de la <span class="text-primary">inclusión</span></h1>
-                <p class="fs-5 text-muted mb-4 justificado">EnRelieve traduce texto del español a Braille en tiempo real y lo conecta con un módulo físico interactivo. Descubre una nueva forma de aprender y comunicar.</p>
-                
-                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start mt-4">
-                    <a href="translate.php" class="btn btn-primary btn-lg px-4 shadow-sm text-white rounded-pill">Probar Traductor</a>
                     
-                    <?php if (empty($_SESSION['usuario'])): ?>
-                        <a href="#" class="btn btn-outline-secondary btn-lg px-4 rounded-pill" data-bs-toggle="offcanvas" data-bs-target="#offCanvasAccounts">Crear Cuenta</a>
-                    <?php endif; ?>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start mt-4">
+                        <a href="translate.php" class="btn btn-light btn-lg text-primary fw-bold px-4 rounded-pill shadow-sm banner-btn">
+                            Probar Traductor <span class="ms-2">→</span>
+                        </a>
+                        <?php if (empty($_SESSION['usuario'])): ?>
+                            <a href="#" class="btn btn-outline-light btn-lg px-4 rounded-pill" data-bs-toggle="offcanvas" data-bs-target="#offCanvasAccounts">
+                                Crear Cuenta
+                            </a>
+                        <?php endif; ?>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-lg-6">
-                <!-- CARRUSEL INTEGRADO AL HERO -->
-                <div id="carouselBraille" class="carousel carousel-dark slide shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselBraille" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselBraille" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselBraille" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                
+                <!-- Columna Visual (Imágenes Flotantes) -->
+                <div class="col-lg-6 d-none d-lg-block position-relative">
+                    <div class="floating-images d-flex justify-content-center">
+                        <!-- Usamos la imagen más representativa del Braille -->
+                        <img src="../image/Braille3.jpg" alt="Módulo físico de interacción Braille" class="img-fluid rounded-4 shadow-lg floating-img">
                     </div>
-
-                    <div class="carousel-inner">
-                        <article class="carousel-item active" data-bs-interval="6000">
-                            <figure class="w-100 m-0 position-relative">
-                                <img src="../image/Braille1.jpg" class="d-block w-100 img-fluid" alt="Imagen accesibilidad 1" style="max-height: 420px; object-fit: cover;">
-                                <figcaption class="carousel-caption d-none d-md-block text-white p-3">
-                                    <h5 class="fw-bold m-0">Accesibilidad y Orientación</h5>
-                                </figcaption>
-                            </figure>
-                        </article>
-
-                        <article class="carousel-item" data-bs-interval="6000">
-                            <figure class="w-100 m-0 position-relative">
-                                <img src="../image/Braille2.jpg" class="d-block w-100 img-fluid" alt="Imagen braille 2" style="max-height: 420px; object-fit: cover;">
-                                <figcaption class="carousel-caption d-none d-md-block text-white p-3">
-                                    <h5 class="fw-bold m-0">Lectura Táctil</h5>
-                                </figcaption>
-                            </figure>
-                        </article>
-
-                        <article class="carousel-item" data-bs-interval="6000">
-                            <figure class="w-100 m-0 position-relative">
-                                <img src="../image/Braille3.jpg" class="d-block w-100 img-fluid" alt="Imagen braille 3" style="max-height: 420px; object-fit: cover;">
-                                <figcaption class="carousel-caption d-none d-md-block text-white p-3">
-                                    <h5 class="fw-bold m-0">Aprender con las Manos</h5>
-                                </figcaption>
-                            </figure>
-                        </article>
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBraille" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon bg-white p-3 rounded-circle shadow-sm" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselBraille" data-bs-slide="next">
-                        <span class="carousel-control-next-icon bg-white p-3 rounded-circle shadow-sm" aria-hidden="true"></span>
-                        <span class="visually-hidden">Siguiente</span>
-                    </button>
                 </div>
             </div>
         </section>
@@ -213,6 +160,41 @@
                         <p class="text-muted mb-0 justificado">Accede a lecciones en video interactivas para entender la lógica del alfabeto y la numeración táctil desde cero.</p>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <section class="mb-5 py-5 main-enhanced p-4 p-md-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill fw-semibold">Interactúa desde la Web</span>
+                    <h2 class="fw-bold text-dark display-6 mb-3">Experimenta el alfabeto táctil</h2>
+                    <p class="text-muted fs-5">Haz clic o pasa el cursor sobre las letras para ver cómo se configuran dinámicamente los servomotores en el cajetín físico de 6 puntos.</p>
+                    
+                    <div class="d-flex flex-wrap gap-2 mt-4" id="alphabet-selector">
+                        <button class="btn btn-outline-primary rounded-pill px-3 active-letter" onclick="actualizarCajetitn('a', [1])">A</button>
+                        <button class="btn btn-outline-primary rounded-pill px-3" onclick="actualizarCajetitn('b', [1, 2])">B</button>
+                        <button class="btn btn-outline-primary rounded-pill px-3" onclick="actualizarCajetitn('c', [1, 4])">C</button>
+                        <button class="btn btn-outline-primary rounded-pill px-3" onclick="actualizarCajetitn('d', [1, 4, 5])">D</button>
+                        <button class="btn btn-outline-primary rounded-pill px-3" onclick="actualizarCajetitn('e', [1, 5])">E</button>
+                        <button class="btn btn-outline-primary rounded-pill px-3" onclick="actualizarCajetitn('f', [1, 2, 4])">F</button>
+                        <button class="btn btn-outline-primary rounded-pill px-3" onclick="actualizarCajetitn('g', [1, 2, 4, 5])">G</button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 text-center">
+                    <div class="p-5 bg-light rounded-4 border d-inline-block shadow-sm position-relative" style="min-width: 280px;">
+                        <h5 class="fw-bold mb-4 text-secondary" id="label-letra">Letra "A"</h5>
+                        
+                        <div class="braille-preview-box">
+                            <div class="braille-dot active" id="dot-1" title="Punto 1"></div>
+                            <div class="braille-dot" id="dot-4" title="Punto 4"></div>
+                            <div class="braille-dot" id="dot-2" title="Punto 2"></div>
+                            <div class="braille-dot" id="dot-5" title="Punto 5"></div>
+                            <div class="braille-dot" id="dot-3" title="Punto 3"></div>
+                            <div class="braille-dot" id="dot-6" title="Punto 6"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -277,112 +259,125 @@
         </section>
     </footer>
 
-    <aside class="offcanvas offcanvas-end text-bg-dark" data-bs-backdrop="static" tabindex="-1" id="offCanvasAccounts" aria-labelledby="offcanvaOfAccount">
+    <!-- OffCANVAS Accounts Rediseñado -->
+    <aside class="offcanvas offcanvas-end offcanvas-glass shadow-lg" data-bs-backdrop="static" tabindex="-1" id="offCanvasAccounts" aria-labelledby="offcanvaOfAccount">
         <?php if (empty($_SESSION['usuario'])): ?>
-            <header class="offcanvas-header px-4 pt-4">
-                <h2 class="offcanvas-title fw-bold text-white" id="offcanvaOfAccount">Inicio de sesión</h2>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+            <header class="offcanvas-header px-4 pt-5 pb-3">
+                <div>
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-1 rounded-pill fw-semibold">¡Hola de nuevo!</span>
+                    <h2 class="offcanvas-title fw-bold text-dark display-6" id="offcanvaOfAccount">Ingresa</h2>
+                </div>
+                <button type="button" class="btn-close mb-auto" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
             </header>
 
-            <hr class="mx-4 mb-3 opacity-25">
-
             <section class="offcanvas-body px-4">
-                <form action="../php/login.php" method="POST" onsubmit="return valUser(this.elements['usuario'].value, this.elements['contrasena'].value);" 
-                    class="p-4 border rounded-3 bg-light shadow-sm needs-validation text-dark" novalidate>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control rounded-3" name="usuario" id="usuario" placeholder="Usuario" required>
-                        <label for="usuario">Usuario</label>
-                        <div class="invalid-feedback">
-                            Agrega un usuario válido.
-                        </div>
+                <form action="../php/login.php" method="POST" onsubmit="return valUser(this.elements['usuario'].value, this.elements['contrasena'].value);" class="needs-validation" novalidate>
+                    
+                    <div class="form-floating mb-3 position-relative">
+                        <input type="text" class="form-control form-control-premium" name="usuario" id="usuario" placeholder="Usuario" required>
+                        <label for="usuario" class="text-muted">Nombre de usuario</label>
+                        <div class="invalid-feedback">Por favor, ingresa tu usuario.</div>
                     </div>
 
-                    <div class="form-floating mb-4">
-                        <input type="password" class="form-control rounded-3" name="contrasena" id="contrasena" placeholder="Contraseña" required>
-                        <label for="contrasena">Contraseña</label>
-                        <div class="invalid-feedback">
-                            Agrega la contraseña correcta.
-                        </div>
+                    <div class="form-floating mb-4 position-relative">
+                        <input type="password" class="form-control form-control-premium pe-5" name="contrasena" id="contrasena" placeholder="Contraseña" required>
+                        <label for="contrasena" class="text-muted">Contraseña</label>
+                        <!-- Ojo para mostrar contraseña (SVG inyectado para mejor rendimiento) -->
+                        <button type="button" class="password-toggle" onclick="togglePassword('contrasena', 'eye-icon-login')" aria-label="Mostrar contraseña">
+                            <svg id="eye-icon-login" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                            </svg>
+                        </button>
+                        <div class="invalid-feedback">La contraseña es obligatoria.</div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100 py-2.5 rounded-3 text-white shadow-sm">Iniciar sesión</button>
+                    <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold text-white shadow-sm mb-4">Iniciar sesión</button>
                 </form>
 
-                <hr class="my-4 opacity-25">
-
-                <nav class="d-flex justify-content-center">
-                    <a class="nav-link text-white fw-semibold border-bottom border-white pb-1" href="#" onclick="cerrarOffcanvas('offCanvasAccounts', 'modalRegistro')">
-                        ¿No tienes cuenta? Regístrate aquí
+                <div class="text-center mt-auto">
+                    <p class="text-muted mb-1">¿Aún no tienes cuenta?</p>
+                    <a class="text-primary fw-bold text-decoration-none" href="#" onclick="cerrarOffcanvas('offCanvasAccounts', 'modalRegistro')">
+                        Regístrate gratis aquí <span class="ms-1">→</span>
                     </a>
-                </nav>
+                </div>
             </section>
         <?php else: ?>
+            <!-- El texto del usuario logueado también debe adaptarse al fondo claro en textos.php -->
             <?php echo obtenerTexto('usuario'); ?>
         <?php endif; ?>
     </aside>
 
-    <div class="modal fade" id="modalRegistro" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
-                <header class="modal-header border-0 px-4 pt-4">
-                    <h1 class="modal-title fs-4 fw-bold text-dark">Regístrate en EnRelieve</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </header>
-
-                <section class="modal-body px-4 pb-4">
-                    <form action="../php/agregarU.php" method="POST" 
-                        onsubmit="return validar(this.email.value);" autocomplete="off">
-
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="name"
-                            name="name" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]{3,}$" 
-                            placeholder="Nombre" title="Agrega un nombre válido" required>
-                            <label for="name">Nombre</label>
+    <!-- MODAL REGISTRO REDISEÑADO -->
+    <div class="modal fade modal-premium" id="modalRegistro" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- modal-lg para dar más respiro a los campos -->
+            <div class="modal-content border-0">
+                <div class="row g-0">
+                    <!-- Columna decorativa (Opcional, muy usado en diseño UI moderno) -->
+                    <div class="col-md-4 d-none d-md-block bg-primary rounded-start" style="background: linear-gradient(135deg, var(--primary-color) 0%, #4a90e2 100%);">
+                        <div class="h-100 d-flex flex-column justify-content-center p-4 text-white">
+                            <h3 class="fw-bold mb-3">Únete a EnRelieve</h3>
+                            <p class="opacity-75">Crea tu cuenta para guardar tu progreso en las lecciones y acceder a todas las herramientas inclusivas.</p>
                         </div>
+                    </div>
+                    
+                    <!-- Columna del Formulario -->
+                    <div class="col-md-8">
+                        <header class="modal-header border-0 px-4 pt-4 pb-0">
+                            <h2 class="modal-title fs-4 fw-bold text-dark">Registro</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        </header>
+                        
+                        <section class="modal-body px-4 pb-4 pt-3">
+                            <form action="../php/agregarU.php" method="POST" onsubmit="return validar(this.email.value);" autocomplete="off" class="needs-validation" novalidate>
+                                
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control form-control-premium" id="name" name="name" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]{3,}$" placeholder="Nombre" required>
+                                    <label for="name" class="text-muted">Nombre(s)</label>
+                                </div>
 
-                        <div class="row g-2">
-                            <div class="col-md-6 form-floating mb-3">
-                                <input type="text" class="form-control" id="aPaterno" 
-                                name="aPaterno" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]{3,}$" 
-                                title="Agrega un apellido paterno válido" required>
-                                <label for="aPaterno" class="ms-1">Apellido Paterno</label>
-                            </div>
+                                <div class="row g-2">
+                                    <div class="col-md-6 form-floating mb-3">
+                                        <input type="text" class="form-control form-control-premium" id="aPaterno" name="aPaterno" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]{3,}$" placeholder="Paterno" required>
+                                        <label for="aPaterno" class="ms-1 text-muted">Apellido Paterno</label>
+                                    </div>
+                                    <div class="col-md-6 form-floating mb-3">
+                                        <input type="text" class="form-control form-control-premium" id="aMaterno" name="aMaterno" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]{3,}$" placeholder="Materno" required>
+                                        <label for="aMaterno" class="ms-1 text-muted">Apellido Materno</label>
+                                    </div>
+                                </div>
 
-                            <div class="col-md-6 form-floating mb-3">
-                                <input type="text" class="form-control" id="aMaterno" 
-                                name="aMaterno" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]{3,}$" 
-                                title="Agrega un apellido materno válido" required>
-                                <label for="aMaterno" class="ms-1">Apellido Materno</label>
-                            </div>
-                        </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control form-control-premium" id="email" name="email" placeholder="Correo" required>
+                                    <label for="email" class="text-muted">Correo electrónico</label>
+                                </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="email" 
-                            name="email" placeholder="Correo" title="Agrega un correo válido." required>
-                            <label for="email">Correo electrónico</label>
-                        </div>
+                                <div class="row g-2">
+                                    <div class="col-md-6 form-floating mb-4">
+                                        <input type="text" class="form-control form-control-premium" id="user" name="user" pattern="^[a-zA-Z0-9]{4,}$" placeholder="Usuario" required>
+                                        <label for="user" class="ms-1 text-muted">Usuario</label>
+                                    </div>
+                                    <div class="col-md-6 form-floating mb-4 position-relative">
+                                        <input type="password" class="form-control form-control-premium pe-5" id="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" placeholder="Contraseña" required>
+                                        <label for="password" class="ms-1 text-muted">Contraseña</label>
+                                        <!-- Toggle Visibilidad -->
+                                        <button type="button" class="password-toggle" onclick="togglePassword('password', 'eye-icon-reg')" aria-label="Mostrar contraseña">
+                                            <svg id="eye-icon-reg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                                <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="user" 
-                            name="user" pattern="^[a-zA-Z0-9]{4,}$" placeholder="Usuario" 
-                            title="Debe tener mínimo 4 caracteres alfanuméricos." required>
-                            <label for="user">Nombre de usuario</label>
-                        </div>
-
-                        <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="password" 
-                            name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" 
-                            placeholder="Contraseña" title="Debe incluir mayúscula, minúscula y número." required>
-                            <label for="password">Contraseña</label>
-                        </div>
-
-                        <footer class="border-0 p-0 d-flex justify-content-end gap-2">
-                            <input type="reset" value="Limpiar" class="btn btn-light px-4 rounded-3">
-                            <input type="submit" value="Registrarme" class="btn btn-primary px-4 rounded-3 text-white">
-                        </footer>
-                    </form>
-                </section>
+                                <footer class="border-0 p-0 d-flex justify-content-end gap-3 mt-2">
+                                    <button type="button" class="btn btn-light px-4 rounded-pill fw-medium" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary px-5 rounded-pill fw-bold text-white shadow-sm">Registrarme</button>
+                                </footer>
+                            </form>
+                        </section>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -415,6 +410,9 @@
         </div>
     </div>
 
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer" style="z-index: 9999;">
+    </div>
+
     <script src="../js/componentes.js"></script>
     <script src="../js/validaciones.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
@@ -423,12 +421,17 @@
     if (isset($_GET['error'])) {
         $mensaje = "";
         switch ($_GET['error']) {
-            case "1": $mensaje = "Usuario no encontrado"; break;
-            case "2": $mensaje = "El correo ya existe"; break;
-            case "3": $mensaje = "El usuario ya existe"; break;
-            default: $mensaje = "Error desconocido";
+            case "1": $mensaje = "Usuario o contraseña incorrectos."; break;
+            case "2": $mensaje = "El correo ya está registrado."; break;
+            case "3": $mensaje = "El nombre de usuario ya está en uso."; break;
+            default: $mensaje = "Ocurrió un error inesperado.";
         }
-        echo "<script>alert('$mensaje');</script>";
+        // Inyectamos el mensaje en la función JS
+        echo "<script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    mostrarAlerta('$mensaje', 'danger');
+                });
+            </script>";
     }
     ?>
 </body>

@@ -16,7 +16,7 @@ function obtenerTexto($tipo) {
         return "
             <header class='offcanvas-header'>
                 <h2 class='offcanvas-title' id='offcanvaOfAccount'>Mi cuenta</h2>
-                <button type='button' class='btn-close btn-close-white' data-bs-dismiss='offcanvas' aria-label='Cerrar'></button>
+                <button type='button' class='btn-close' data-bs-dismiss='offcanvas' aria-label='Cerrar'></button>
             </header>
 
             <hr class='mb-2 hr-grueso'>

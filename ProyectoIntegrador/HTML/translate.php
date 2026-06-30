@@ -42,6 +42,10 @@
 
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item">
+                            <a class="nav-link nav-btn px-3 py-2 text-dark" href="index.php#nosotros">Nosotros</a>
+                        </li>
+                        
+                        <li class="nav-item">
                             <a class="nav-link nav-btn px-3 py-2 active fw-bold text-primary" aria-current="page" href="translate.php">Traductor</a>
                         </li>
 

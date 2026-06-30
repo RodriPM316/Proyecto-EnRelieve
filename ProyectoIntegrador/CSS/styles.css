@@ -44,11 +44,10 @@ main {
     border-radius: var(--radius-md) !important;
 }
 
-/* Justificado de texto más natural */
+/* Corrección de legibilidad y accesibilidad */
 .justificado {
-    text-align: justify;      
-    text-justify: inter-word; 
-    line-height: 1.7;        
+    text-align: left !important; /* Cambiado a alineación izquierda */
+    line-height: 1.6;        
     margin: 0 0 1rem 0;
     font-size: 1.05rem;
     color: var(--text-main);
@@ -283,6 +282,21 @@ main {
     pointer-events: none; /* Evita que le den clic si está bloqueado */
 }
 
+/* Efecto de Relieve Premium en Tarjetas (Neumorfismo Suave) */
+.card-interactive {
+    background: #ffffff;
+    border: 1px solid rgba(13, 110, 253, 0.08) !important;
+    border-radius: var(--radius-lg);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.card-interactive:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(13, 110, 253, 0.12);
+    border-color: var(--primary-color) !important;
+}
+
 /* =========================================
    BANNER INTERACTIVO (index.php)
 ========================================= */
@@ -357,4 +371,83 @@ main {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
     100% { transform: translateY(0px); }
+}
+
+/* Estilos para el Simulador de Cajetín Interactivo */
+.braille-preview-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.braille-dot {
+    width: 24px;
+    height: 24px;
+    background-color: #dee2e6;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.braille-dot.active {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(13, 110, 253, 0.6);
+    transform: scale(1.2);
+}
+
+/* =========================================
+   FORMULARIOS PREMIUM (Login & Registro)
+========================================= */
+/* Offcanvas estilo Glassmorphism */
+.offcanvas-glass {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-main) !important;
+}
+
+/* Inputs estilizados */
+.form-control-premium {
+    background-color: #f8f9fa;
+    border: 1px solid #e1e5eb;
+    border-radius: var(--radius-md) !important;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.form-control-premium:focus {
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15);
+}
+
+/* Botón de visibilidad de contraseña */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* Modal de Registro Premium */
+.modal-premium .modal-content {
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-hover);
 }
