@@ -71,6 +71,85 @@
     filter: drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.2));
 }
 
+/* =========================================
+   CORRECCIONES MODO OSCURO (Textos y Scroll)
+========================================= */
+
+/* 1. Reparar el Navbar al hacer scroll en Modo Oscuro */
+[data-bs-theme="dark"] .navbar-scrolled {
+    background-color: rgba(26, 29, 32, 0.95) !important; /* Efecto cristal oscuro */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 2. Forzar que los textos "text-dark" se vuelvan blancos en Modo Oscuro */
+[data-bs-theme="dark"] .text-dark {
+    color: #f8f9fa !important; /* Blanco hueso para no cansar la vista */
+}
+
+/* 3. Ajustar los textos silenciados (muted) para que resalten sobre fondo negro */
+[data-bs-theme="dark"] .text-muted {
+    color: #adb5bd !important; /* Gris claro */
+}
+
+/* 4. Asegurarnos de que el botón del buscador no se quede blanco */
+[data-bs-theme="dark"] .input-search {
+    background-color: #212529 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .input-search::placeholder {
+    color: #adb5bd !important;
+}
+
+[data-bs-theme="dark"] .input-group .btn-white {
+    background-color: #212529 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 5. Invertir la lupa del buscador a color blanco en Modo Oscuro */
+[data-bs-theme="dark"] .icon-search {
+    filter: brightness(0) invert(1);
+}
+
+/* =========================================
+   REPARACIÓN DE FORMULARIOS EN MODO OSCURO
+========================================= */
+
+/* 1. Evitar que el input se vuelva blanco al hacer clic (Focus) */
+[data-bs-theme="dark"] .form-control-premium:focus {
+    background-color: #1a1d20 !important; /* Fondo oscuro activo */
+    color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* 2. Forzar el fondo oscuro cuando el navegador hace Autocompletado */
+[data-bs-theme="dark"] .form-control-premium:-webkit-autofill,
+[data-bs-theme="dark"] .form-control-premium:-webkit-autofill:hover,
+[data-bs-theme="dark"] .form-control-premium:-webkit-autofill:focus,
+[data-bs-theme="dark"] .form-control-premium:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #2a2a2a inset !important; /* Rellena el fondo */
+    -webkit-text-fill-color: #ffffff !important; /* Mantiene el texto blanco */
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* 3. Reparar el color del label flotante cuando el input está activo o lleno */
+[data-bs-theme="dark"] .form-floating > .form-control:focus ~ label,
+[data-bs-theme="dark"] .form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: var(--primary-hover) !important; /* Azul claro para destacar */
+}
+
+/* 4. Reparar el "cuadrito blanco" que Bootstrap le pone al label flotante */
+[data-bs-theme="dark"] .form-floating > .form-control:focus ~ label::after,
+[data-bs-theme="dark"] .form-floating > .form-control:not(:placeholder-shown) ~ label::after {
+    background-color: transparent !important;
+}
+
+/* 5. Asegurar que las etiquetas 1 y 2 en el traductor se vean bien */
+[data-bs-theme="dark"] .form-label.text-dark {
+    color: #e1e5eb !important;
+}
+
 /* Comportamiento de scroll suave para toda la página */
 html {
     scroll-behavior: smooth;
