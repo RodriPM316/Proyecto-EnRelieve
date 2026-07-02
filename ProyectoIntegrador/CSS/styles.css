@@ -622,3 +622,84 @@ main {
     border: 1px solid rgba(0,0,0,0.05);
     box-shadow: var(--shadow-hover);
 }
+
+/* =========================================
+   SHOWCASE DE HARDWARE (Sección Nosotros)
+========================================= */
+.hardware-showcase {
+    position: relative;
+    background-color: #121212; /* Fondo oscuro por si la imagen tarda en cargar */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+    cursor: crosshair; /* Sugiere que es algo técnico/detallado */
+}
+
+.hardware-showcase:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(13, 110, 253, 0.2) !important;
+}
+
+.hardware-img {
+    transition: transform 0.8s ease, filter 0.4s ease;
+    filter: contrast(1.05) saturate(1.1); /* Le da un ligero realce técnico a la foto */
+}
+
+.hardware-showcase:hover .hardware-img {
+    transform: scale(1.05); /* Zoom suave */
+}
+
+/* Degradado oscuro para que el texto sea siempre legible */
+.hardware-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+    height: 60%;
+    pointer-events: none; /* Para que el ratón no interfiera con el hover de la imagen */
+}
+
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+}
+
+/* Asegurar que el borde se vea bien en Modo Oscuro */
+[data-bs-theme="dark"] .hardware-showcase {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* =========================================
+   REPARACIÓN DE LA TABLA DASHBOARD (Modo Oscuro)
+========================================= */
+
+/* 1. Fondo oscuro para el contenedor del scroll */
+html[data-bs-theme="dark"] .tabla-scroll {
+    background-color: #1a1d20 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 2. Cabecera de la tabla adaptada al modo oscuro */
+html[data-bs-theme="dark"] .table-light,
+html[data-bs-theme="dark"] .table-light th {
+    background-color: #212529 !important;
+    color: #e1e5eb !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 3. Variables nativas de Bootstrap para el resto de la tabla */
+html[data-bs-theme="dark"] .table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #e1e5eb;
+    --bs-table-border-color: rgba(255, 255, 255, 0.05);
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.05);
+    --bs-table-hover-color: #ffffff;
+}
+
+/* 4. Ajustar el color del texto secundario en los encabezados */
+html[data-bs-theme="dark"] .table th.text-secondary {
+    color: #adb5bd !important;
+}
+
+/* 5. Asegurar que los selectores (dropdowns) de nivel de acceso se vean bien */
+html[data-bs-theme="dark"] .text_select {
+    background-color: #212529 !important;
+}

@@ -129,7 +129,7 @@
                 <div class="col-lg-6 d-none d-lg-block position-relative">
                     <div class="floating-images d-flex justify-content-center">
                         <!-- Usamos la imagen más representativa del Braille -->
-                        <img src="../image/Braille3.jpg" alt="Módulo físico de interacción Braille" class="img-fluid rounded-4 shadow-lg floating-img">
+                        <img src="../image/protobrai.jpeg" alt="Módulo físico de interacción Braille" class="img-fluid rounded-4 shadow-lg floating-img">
                     </div>
                 </div>
             </div>
@@ -219,9 +219,14 @@
                     <p class="fs-5 text-muted justificado mb-0">Allí, servomotores representan cada carácter en un módulo táctil, permitiendo que las personas con discapacidad visual puedan percibir mediante el tacto la información mostrada en pantalla.</p>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <div class="ratio ratio-4x3 rounded-4 shadow-sm overflow-hidden bg-white d-flex align-items-center justify-content-center border" style="min-height: 250px;">
-                        <span class="text-muted fw-semibold px-4">📸 [Aquí puedes colocar una fotografía real de tu integración con Arduino]</span>
-                    </div>
+                    <div class="hardware-showcase rounded-4 shadow-lg overflow-hidden position-relative border">
+                        <img src="../image/prototipo-braille.jpeg" alt="Prototipo físico del módulo táctil Braille con Arduino" class="img-fluid w-100 hardware-img">
+                    
+                        <div class="hardware-overlay d-flex flex-column justify-content-end p-4 text-start">
+                            <span class="badge bg-primary mb-2 align-self-start shadow-sm px-3 py-2 rounded-pill">Prototipo v1.0</span>
+                            <p class="text-white m-0 fw-medium fs-5 text-shadow">Mecanismo táctil controlado por Arduino en desarrollo.</p>
+                        </div>
+                 </div>
                 </div>
             </div>
         </section>

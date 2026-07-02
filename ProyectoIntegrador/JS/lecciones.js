@@ -6,9 +6,9 @@ const lecciones = {
             <p class="fs-5 justificado">El cajetín generador está formado por <strong>6 puntos</strong> distribuidos en dos columnas de tres puntos cada una. Al numerarlos, la columna izquierda contiene los puntos 1, 2 y 3 (de arriba hacia abajo), y la columna derecha los puntos 4, 5 y 6. Combinando estos puntos en relieve, se pueden crear hasta 64 caracteres distintos, suficientes para representar todo el alfabeto.</p>
             
             <div class="ratio ratio-16x9 rounded shadow-sm mx-auto overflow-hidden mt-4 mb-2" style="max-width: 700px;">
-                <iframe src="https://www.youtube.com/embed/ppUkMPIikqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/XRst-zhKaK0?si=IdFf7hWtmnoRur8V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <p class="text-center text-muted small mb-4">Créditos del material: <a href="https://www.youtube.com/watch?v=ppUkMPIikqI" target="_blank">YouTube</a></p>
+            <p class="text-center text-muted small mb-4">Créditos del material: <a href="https://www.youtube.com/embed/XRst-zhKaK0?si=IdFf7hWtmnoRur8V" target="_blank">YouTube</a></p>
         `,
         preguntas: [
             {
@@ -56,10 +56,7 @@ const lecciones = {
             <p class="fs-5 justificado">Para indicar que estas letras deben leerse como números, se utiliza un símbolo especial llamado <strong>prefijo numérico</strong>, formado por los puntos 3, 4, 5 y 6. Cuando este prefijo aparece, todas las letras de la 'a' a la 'j' que le sigan directamente (sin espacios) se convierten en números automáticamente (la 'a' es 1, la 'b' es 2, y la 'j' es 0).</p>
             
             <div class="ratio ratio-16x9 rounded shadow-sm mx-auto overflow-hidden mt-4 mb-2" style="max-width: 700px;">
-                <video controls>
-                    <source src="../video/Numerico_Braille.mp4" type="video/mp4">
-                    Tu navegador no soporta el elemento de video.
-                </video>
+                <iframe src="https://www.youtube.com/embed/_hBtBg94Rf0?si=fVtxhpKNy1F0twMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         `,
         preguntas: [
@@ -106,6 +103,10 @@ const lecciones = {
         contenido: `
             <p class="fs-5 justificado">El <strong>Grado 2</strong>, también conocido como Braille Estenográfico, surge de una necesidad física: los libros impresos en Braille ocupan un volumen inmenso. Un libro de texto normal puede requerir múltiples tomos pesados si se imprime en Grado 1.</p>
             <p class="fs-5 justificado">Para solucionar esto, la estenografía utiliza <strong>contracciones</strong>. Esto significa que un solo símbolo o una combinación corta puede representar palabras de uso muy frecuente (como "que", "con", "de", "el", "la"), así como prefijos o sufijos (como "ción", "mente"). Al aplicar estas reglas, se logra reducir drásticamente el espacio que ocupa el texto y, además, permite a los usuarios avanzados leer con mucha mayor fluidez y velocidad.</p>
+            
+            <div class="ratio ratio-16x9 rounded shadow-sm mx-auto overflow-hidden mt-4 mb-2" style="max-width: 700px;">
+                <iframe src="https://www.youtube.com/embed/I4BU_237NRs?si=tuHDnWnttTROxrlp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         `,
         preguntas: [
             {
@@ -154,6 +155,10 @@ const lecciones = {
                 <li class="mb-3"><strong>Acentos ortográficos:</strong> Las letras que llevan acento ortográfico o tilde (á, é, í, ó, ú) pierden su capacidad de formar contracciones. Esto se debe a que la vocal acentuada tiene una representación en Braille totalmente distinta a la vocal normal, lo que rompe la estructura del símbolo contraído.</li>
                 <li class="mb-2"><strong>Prioridad de contracción:</strong> En ocasiones, una misma letra en medio de una palabra podría formar una contracción con la letra que está a su izquierda o con la que está a su derecha. La norma dicta que, ante esta ambigüedad, la letra se contraerá siempre con la <em>posterior</em> (la de su derecha).</li>
             </ul>
+
+            <div class="ratio ratio-16x9 rounded shadow-sm mx-auto overflow-hidden mt-4 mb-2" style="max-width: 700px;">
+                <iframe src="https://www.youtube.com/embed/P8R4hxOwRE4?si=aM21Kel-aPeVOGoN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         `,
         preguntas: [
             {
